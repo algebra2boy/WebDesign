@@ -1,4 +1,11 @@
+/*
+CSS priority:
+    Tag selector < class selector < ID selector
 
+    Higher priority selector will overwrite the lower priority selector
+*/
+
+/*TAG SELECTOR */
 body {
   background-color: #FAF7F0;
 }
@@ -14,4 +21,41 @@ hr {
 
 h2 {
   color: #66BFBF;
+}
+
+/* Special effect to the img
+Pseudocode class (:)
+if you hover to the picture, it will change the background color to gold
+*/
+img:hover {
+  background-color: gold;
+}
+
+/*CLASS SELECTOR
+Support multiple types
+An HTML element can have more than one class
+class = "candy circular"
+*/
+.pumpkin {
+  background-color: red;
+}
+
+.candy {
+  background-color: yellow;
+}
+
+.circular {
+  border-radius: 100%;
+}
+
+/*ID SELECTOR
+Support a very specific type
+There might only have one or two attributes for one id
+- cannot have more than one id (id must be unique)
+id = "heading"
+*/
+
+#heading {
+  color: green;
+  font-size: 30px;
 }
