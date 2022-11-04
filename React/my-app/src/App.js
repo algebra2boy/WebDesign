@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"; // activate and direct to different router
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"; // activate and direct to different link
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path = '/' exact/>
+        <Route path = '/' exact />
       </Routes>
     </Router>
     </>
