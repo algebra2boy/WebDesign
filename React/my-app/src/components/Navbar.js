@@ -1,59 +1,78 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from './Button';
+import './Navbar.css';
 
 
 function Navbar() {
   // setClick is the name of the function 
   // click is the true and false value, showing if it clicked
-  const [click , setClick] = useState(false);
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+
 
   const handleClick = () => setClick(!click);
-  const closeMobileMeun = () => setClick(false);
-  
+  const closeMobileMenu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+
+  // whenever the user resize the screen, we show the button
+  window.addEventListener('resize', showButton);
+
   return (
     <>
-        <nav className="navbar">
-            <div className="navbar-container">
-                <Link to = "/" className = "navbar-logo">
-                    Lost and Found <i class="fa-regular fa-envelope"></i>
-                </Link>
-                <div className='meun-icon' onClick={handleClick}> 
-                    <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-                </div>
-                
-                {/* activate the meun bar when it is clicked */}
-                <ul className={click ? 'nav-meun active' : 'nav-meun'}>
+      <nav className="navbar">
+        <div className="navbar-container">
 
-                  <li className='nav-item'>
-                    <Link to = "/" className = 'nav-link' onClick = {closeMobileMeun}>
-                      Home
-                    </Link>
-                  </li> 
+          <Link to="/" className="navbar-logo">
+            ABC 
+            <i class="fab fa-typo3"/>
+          </Link>
 
-                  <li className='nav-item'>
-                    <Link to = "/services" className = 'nav-link' onClick = {closeMobileMeun}>
-                      Services
-                    </Link>
-                  </li>
+          <div className='meun-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          </div>
 
-                  <li className='nav-item'>
-                    <Link to = "/products" className = 'nav-link' onClick = {closeMobileMeun}>
-                      Products
-                    </Link>
-                  </li>
+          {/* activate the meun bar when it is clicked */}
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
-                  <li className='nav-item'>
-                    <Link to = "/sign-up" className = 'nav-link' onClick = {closeMobileMeun}>
-                      Sign up
-                    </Link>
-                  </li>
+            <li className='nav-item'>
+              <Link to="/" className='nav-links' onClick={closeMobileMenu}>
+                Home
+              </Link>
+            </li>
 
+            <li className='nav-item'>
+              <Link to="/services" className='nav-links' onClick={closeMobileMenu}>
+                Services
+              </Link>
+            </li>
 
-                </ul>
+            <li className='nav-item'>
+              <Link to="/products" className='nav-links' onClick={closeMobileMenu}>
+                Products
+              </Link>
+            </li>
 
-              
-            </div>
-        </nav>
+            <li className='nav-item'>
+              <Link to="/sign-up" className='nav-links-mobile' onClick={closeMobileMenu}>
+                Sign up
+              </Link>
+            </li>
+
+          </ul>
+          
+          {button && <Button buttonStyle='btn-outline'> SIGN UP
+            </Button>}
+
+        </div>
+      </nav>
     </>
   )
 }
