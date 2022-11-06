@@ -2,7 +2,7 @@
     /* add blending color to the nav bar */
     background: linear-gradient(90deg, rgb(157, 22, 22) 0%, rgb(133, 111, 111) 100%);
     /* how high the nav bar should be */
-    height: 100px;
+    height: 80px;
     display: flex;
     /* make sure that every nav bar item centers */
     justify-content: center;
@@ -48,7 +48,7 @@
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-gap: 10px;
+    grid-gap: 12px;
     list-style: none;
     text-align: center;
     width: 60vw;
@@ -94,14 +94,14 @@
   down menu */
   @media screen and (max-width: 960px) {
     .NavbarItems {
-      position: relative;
+      position: flex;
     }
   
     .nav-menu {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 90vh;
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: -100%;
@@ -110,7 +110,7 @@
     }
   
     .nav-menu.active {
-      background: #242222;
+      background: #222422;
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
