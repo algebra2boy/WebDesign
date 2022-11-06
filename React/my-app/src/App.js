@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"; // act
 function App() {
   return (
     <>
-    {/* make router for each nav */}
     <Router>
       <Navbar />
       <Routes>

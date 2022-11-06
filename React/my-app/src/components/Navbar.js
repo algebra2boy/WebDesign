@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import './Navbar.css';
@@ -22,6 +22,10 @@ function Navbar() {
     }
   };
 
+  useEffect( () => {
+    showButton();
+  }, []);
+
   // whenever the user resize the screen, we show the button
   window.addEventListener('resize', showButton);
 
@@ -30,9 +34,9 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
 
-          <Link to="/" className="navbar-logo">
-            ABC 
-            <i class="fab fa-typo3"/>
+          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            ABC
+            <i className="fab fa-typo3" />
           </Link>
 
           <div className='meun-icon' onClick={handleClick}>
@@ -67,9 +71,9 @@ function Navbar() {
             </li>
 
           </ul>
-          
+
           {button && <Button buttonStyle='btn-outline'> SIGN UP
-            </Button>}
+          </Button>}
 
         </div>
       </nav>
