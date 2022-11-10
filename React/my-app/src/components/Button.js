@@ -6,7 +6,6 @@ const STYLES = ['btn--primary', 'btn--outline'];
 
 const SIZES = ['btn--medium', 'btn-large'];
 
-
 // make a class with many properties
 export const Button = (
     { children,
@@ -27,9 +26,8 @@ export const Button = (
             // customize the button
             className = {`btn ${checkButtonStyle} ${checkButtonSize}`}
             onClick = {onClick}
-            type = {type}
-            >
-                {children}
+            type = {type}>
+            {children}
             </button>
         </Link>
     )

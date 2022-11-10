@@ -21,6 +21,7 @@ to select, for example, var(--primary) */
     border: 1px solid var(--primary);
 }
 
+
 .btn--outline {
     background-color: transparent;
     color: #fff;
@@ -29,6 +30,7 @@ to select, for example, var(--primary) */
     transition: all 0.3s east-out;
 }
 
+/* Button Sizes */
 .btn--medium {
     padding: 8px 20px;
     font-size: 20px;

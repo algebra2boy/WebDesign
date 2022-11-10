@@ -6,31 +6,34 @@ import './HeroSection.css';
 function HeroSection() {
     return (
         <div className='hero-container'>
-            <video src="/videos/video-2.mp4"
+            <video src="./videos/video-1.mp4"
                 autoPlay loop muted />
-            <h1>ADVENTURE AWAITS</h1>
-            <p>What are you waiting for?</p>
+            <h1>Eric's Zoom land</h1>
+            <p>I refuse to come to 377</p>
+
             <div className='hero-btns'>
                 {/* Customized Button we made in the button.js */}
                 <Button
                     className='btns'
                     buttonStyle='btn--outline'
                     buttonSize='btn-large'
-                >GET STARTED
+                >
+                
+                    Never
                 </Button>
 
                 <Button
                     className='btns'
                     buttonStyle='btn--primary'
                     buttonSize='btn-large'
-                >WATCH TRAILER <i className = 'farfa-play-circle'/>
+                >
+                    Now <i className = 'farfa-play-circle'/>
                 </Button>
 
             </div>
-
 
         </div>
     );
 }
 
-export default HeroSection
+export default HeroSection;
