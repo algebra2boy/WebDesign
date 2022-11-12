@@ -14,10 +14,6 @@ function App() {
       <Routes>
         <Route path = '/' exact component={Home} />
       </Routes>
-      <p>Hello, world</p>
-      <p>lorem</p>
-      <p>lorem</p>
-      <p>lorem</p>
     </Router>
     </>
 
